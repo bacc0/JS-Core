@@ -7,8 +7,8 @@ function point(input) {
            let yMin = Number(input[4]);
            let yMax = Number(input[5]);
 
-           if (x >= xMin && x <= xMax &&
-               y >= yMin && y <= yMax) {
+           if ( x >= xMin && x <= xMax &&
+                y >= yMin && y <= yMax ) {
 
                 console.log('inside');
 

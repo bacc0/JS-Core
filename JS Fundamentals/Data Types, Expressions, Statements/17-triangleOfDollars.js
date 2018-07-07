@@ -1,9 +1,9 @@
-function TriOf$( params ) {
+function TriOf$(params) {
 
-     for (let i = 1; i <= params; i++) {
-          
-           console.log('$'.repeat(i));
-     }          
+        for (let i = 1; i <= params; i++) {
+
+        console.log('$'.repeat(i));
+    }          
 }
 
 TriOf$(3);

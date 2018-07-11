@@ -4,4 +4,5 @@ function binary(input) {
 }
 
 binary(['00001001']);
+
 binary(['11110000']);

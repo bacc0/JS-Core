@@ -62,12 +62,50 @@
 
         function createCountry(country, capital){
             $('<tr>')
-                .append(`<td>${country}</td>`)
-                .append(`<td>${country}</td>`)
-                .append('<td>')
+                .append($(`<td>${country}</td>`))
+                .append($(`<td>${country}</td>`))
+                .append($('<td>')
+                    .append($('<a href="#">Up </a>').click(moveUp))
+                    .append($('<a href="#">Down </a>').click(moveDown))
+                    .append($('<a href="#">Delete </a>').click(del))
+                       )
             .appendTo($('#countriesTable'));
         }
-        
+
+                createCountry('Bulgaria', 'Sofia');
+                createCountry('Germany', 'Berlin');
+                createCountry('Russia', 'Moscow');
+
+                fixLinks();
+
+        function moveUp() {
+           let current = $(this).parent().parent();
+           current.insertBefore(current.prev());
+
+           fixLinks(); 
+        }
+
+        function moveDown() {
+            let current = $(this).parent().parent();
+            current.insertAfter(current.next());
+           
+            fixLinks();
+        }
+
+        function del() {
+            let current = $(this).parent().parent();
+            current.fadeToggle(function () {
+                current.remove();
+            });
+
+            fixLinks();
+        }
+
+        function fixLinks() {
+            $('tr a').show();
+            $('tr:nth-child(3) a:contains(Up)').hide();
+            $('tr:last-child a:contains(Down)').hide();
+        }
     </script>
 </body>
 

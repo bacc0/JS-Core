@@ -49,15 +49,15 @@
         function initializeTable() {
             $('#createLink').click(addCountry);
         }
-
+        
         function addCountry() {
             let name = $('#newCountryText').val();
             let capital = $('#newCapitalText').val();
+    
+                $('#newCountryText').val('');
+                $('#newCapitalText').val('');
 
-            $('#newCountryText').val('');
-            $('#newCapitalText').val('');
-
-            createCountry(name, capital)
+            createCountry(name, capital);
         }
 
         function createCountry(name, capital) {
@@ -65,36 +65,39 @@
                 .append($(`<td>${name}</td>`))
                 .append($(`<td>${capital}</td>`))
                 .append($('<td>')
-                    .append($('<a href="#">Up </a>').click(moveUp))
-                    .append($('<a href="#">Down </a>').click(moveDown))
-                    .append($('<a href="#">Delete</a>').click(del))
+                    .append($('<a href="#">Up </a>').click(maveUp))
+                    .append($('<a href="#">Down </a>').click(maveDown))
+                    .append($('<a href="#">Delete </a>').click(del))
                        )
-                .appendTo($('#countriesTable'));
+            .appendTo($('#countriesTable'));     
         }
-        createCountry('Bulgaria', 'Sofia');
-        createCountry('Germany', 'Berlin');
-        createCountry('Russia', 'Moscow');
 
-        fixLinks();
-
-        function moveUp() {
-            let current = $(this).parent().parent();
-            current.insertBefore(current.prev());
+            createCountry('Bulgaria', 'Sofia');
+            createCountry('Germany', 'Berlin');
+            createCountry('Russia', 'Moscow');
             fixLinks();
+
+        function maveUp() {
+            let currentRow = $(this).parent()
+                                    .parent();
+            currentRow.insertBefore(currentRow.prev());        
+            fixLinks();              
         }
 
-        function moveDown() {
-            let current = $(this).parent().parent();
-            current.insertAfter(current.next());
+        function maveDown() {
+            let currentRow = $(this).parent()
+                                    .parent();
+            currentRow.insertAfter(currentRow.next());     
             fixLinks();
         }
 
         function del() {
-            let current = $(this).parent().parent();
-            current.fadeToggle(function () {
-                current.remove();
+            let currentRow = $(this).parent()
+                                    .parent();
+            currentRow.fadeToggle((400), function () {
+                currentRow.remove();
                 fixLinks();
-            });
+            });     
         }
 
         function fixLinks() {
@@ -102,6 +105,7 @@
             $('tr:nth-child(3) a:contains(Up)').hide();
             $('tr:last-child a:contains(Down)').hide();
         }
+
     </script>
 </body>
 

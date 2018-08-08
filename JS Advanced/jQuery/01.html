@@ -51,60 +51,23 @@
         }
         
         function addCountry() {
-            let name = $('#newCountryText').val();
+            let country = $('#newCountryText').val();
             let capital = $('#newCapitalText').val();
-    
+
                 $('#newCountryText').val('');
                 $('#newCapitalText').val('');
 
-            createCountry(name, capital);
+            createCountry(country, capital)    
         }
 
-        function createCountry(name, capital) {
+        function createCountry(country, capital){
             $('<tr>')
-                .append($(`<td>${name}</td>`))
-                .append($(`<td>${capital}</td>`))
-                .append($('<td>')
-                    .append($('<a href="#">Up </a>').click(maveUp))
-                    .append($('<a href="#">Down </a>').click(maveDown))
-                    .append($('<a href="#">Delete </a>').click(del))
-                       )
-            .appendTo($('#countriesTable'));     
+                .append(`<td>${country}</td>`)
+                .append(`<td>${country}</td>`)
+                .append('<td>')
+            .appendTo($('#countriesTable'));
         }
-
-            createCountry('Bulgaria', 'Sofia');
-            createCountry('Germany', 'Berlin');
-            createCountry('Russia', 'Moscow');
-            fixLinks();
-
-        function maveUp() {
-            let currentRow = $(this).parent()
-                                    .parent();
-            currentRow.insertBefore(currentRow.prev());        
-            fixLinks();              
-        }
-
-        function maveDown() {
-            let currentRow = $(this).parent()
-                                    .parent();
-            currentRow.insertAfter(currentRow.next());     
-            fixLinks();
-        }
-
-        function del() {
-            let currentRow = $(this).parent()
-                                    .parent();
-            currentRow.fadeToggle((400), function () {
-                currentRow.remove();
-                fixLinks();
-            });     
-        }
-
-        function fixLinks() {
-            $('tr a').show();
-            $('tr:nth-child(3) a:contains(Up)').hide();
-            $('tr:last-child a:contains(Down)').hide();
-        }
+        
     </script>
 </body>
 

@@ -55,7 +55,9 @@
                 $('#newCountryText').val('');
                 $('#newCapitalText').val('');
 
-            createCountry(country, capital);    
+            createCountry(country, capital);  
+            
+                fixLinks();  
         }
         
         function createCountry(country, capital) {
@@ -93,7 +95,7 @@
             let current = $(this).parent().parent();
             current.fadeToggle(function () {
                 current.remove();
-                
+
                     fixLinks();
             });
         }

@@ -1,114 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Countries Table</title>
-
-    <style>
-        td,
-        th {
-            background: rgb(240, 240, 240);
-            padding: 5px 10px
-        }
-
-        input[type='text'] {
-            width: 60px
-        }
-    </style>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="link-buttons.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
 </head>
-
-<body>
-    <table id="countriesTable">
-        <tr>
-            <th>Country</th>
-            <th>Capital</th>
-            <th>Action</th>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" id="newCountryText" />
-            </td>
-            <td>
-                <input type="text" id="newCapitalText" />
-            </td>
-            <td>
-                <a href="#" id="createLink">[Create]</a>
-            </td>
-        </tr>
-    </table>
+<body onload="attachEvents()">
+    <a class="button">Sofia</a>
+    <a class="button">Plovdiv</a>
+    <a class="button">Varna</a>
 
     <script>
-        $(() => initializeTable());
-
-        function initializeTable() {
-            $('#createLink').click(addCountry);
-        }
-
-        function addCountry() {
-            let country = $('#newCountryText').val();
-            let capital = $('#newCapitalText').val();
-
-                $('#newCountryText').val('');
-                $('#newCapitalText').val('');
-
-            createCountry(country, capital);  
-            
-                fixLinks();  
-        }
-        
-        function createCountry(country, capital) {
-            $('<tr>')
-                .append($(`<td>${country}</td>`))
-                .append($(`<td>${capital}</td>`))
-                .append($(`<td>`)
-                        .append($('<a href="#"> [Up]</a>').click(moveUp))
-                        .append(' ')
-                        .append($('<a href="#">[Down]</a>').click(moveDown))
-                        .append(' ')
-                        .append($('<a href="#">[Delete] </a>').click(del)) )
-            .appendTo($('#countriesTable'));
-        }
-
-            createCountry('Bulgaria', 'Sofia');
-            createCountry('Germany', 'Berlin');
-            createCountry('Russia', 'Moscow');
-
-                fixLinks();
-
-        function moveUp() {
-            let current = $(this).parent().parent();
-            current.insertBefore(current.prev());
-
-                fixLinks();
-        }  
-
-        function moveDown() {
-            let current = $(this).parent().parent();
-            current.insertAfter(current.next());
-
-                fixLinks();
-        }
-
-        function del() {
-            let current = $(this).parent().parent();
-            current.fadeToggle(function () {
-                current.remove();
-
-                    fixLinks();
-            });
-        }
-
-        function fixLinks() {
-            $('tr a').show();
-            $('tr:nth-child(3) a:contains(Up)').hide();
-            $('tr:last-child a:contains(Down)').hide();
-        }  
-        
+    
     </script>
+    
 </body>
-
 </html>

@@ -44,7 +44,7 @@
 
         <script>
             function attachEvents() {
-                $('a.button').on('click', clicked);
+                $('a.button').click(clicked);
 
                 function clicked() {
                     $('.selected').removeClass('selected');

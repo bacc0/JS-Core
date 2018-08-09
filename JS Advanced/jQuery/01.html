@@ -66,9 +66,9 @@
                 .append($(`<td>${capital}</td>`))
                 .append($(`<td>`)
                         .append($('<a href="#"> [Up]</a>').click(moveUp))
-                            .append(' ')
+                        .append(' ')
                         .append($('<a href="#">[Down]</a>').click(moveDown))
-                            .append(' ')
+                        .append(' ')
                         .append($('<a href="#">[Delete] </a>').click(del)) )
             .appendTo($('#countriesTable'));
         }

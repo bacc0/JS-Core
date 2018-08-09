@@ -2,53 +2,53 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
-        <link rel="stylesheet" href="link-buttons.css" />
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+        <title>Selectable Towns</title>
         <style>
-            a.button {
-                border: 1px solid #CCC;
-                background: #EEE;
-                padding: 5px 10px;
-                border-radius: 5px;
-                color: #333;
-                text-decoration: none;
+            li {
                 display: inline-block;
-                margin: 5px;
-                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            a.button.selected {
-                color: #111;
-                font-weight: bold;
-                border: 1px solid #AAA;
-                background: #BBB;
-            }
-
-            a.button.selected::before {
-                content: "\2713\20\20";
-            }
-
-            a:hover {
                 cursor: pointer;
+                padding: 10px 20px;
+                background-color: lightgrey;
+                border-radius: 2px;
+                margin: 0 2px ;
+            }
+
+            ul {
+                padding: 0;
             }
         </style>
-    
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        
     </head>
-    <body onload="attachEvents()">
-
-        <a class="button">Sofia</a>
-        <a class="button">Plovdiv</a>
-        <a class="button">Varna</a>
+    <body>
+        <h2>Towns</h2>
+        <ul id="items">
+            <li>Sofia</li>
+            <li>Varna</li>
+            <li>Plovdiv</li>
+            <li>Bourgas</li>
+            <li>Rousse</li>
+        </ul>
+        <button id="showTownsButton">Show Towns</button>
+        <div id="selectedTowns"></div>
 
         <script>
-            function attachEvents() {
-                $('a.button').click(clicked);
+            $(attachEvents());
 
-                function clicked() {
-                    $('.selected').removeClass('selected');
-                    $(this).addClass('selected');
+            function attachEvents() {
+                $('#items li').click(changeStile);
+
+                function changeStile() {
+
+                    if($(this).css == ('background-color' ,'lightslategray')){
+                        $(this).css('background-color' ,'black')
+                           .css('color' ,'white') 
+                    }
+                    else {
+                        $(this).css('background-color' ,'lightslategray')
+                           .css('color' ,'white') 
+                    }
+                   
                 }
             }
         </script>

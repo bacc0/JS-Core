@@ -16,6 +16,7 @@
             text-decoration: none;
             display: inline-block;
             margin: 5px;
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
         }
 
         a.button.selected {
@@ -45,7 +46,8 @@
             $('a.button').on('click', clicked);
 
             function clicked() {
-                
+                $('selected').removeClass('selected')
+                .addClass('')
             }
         }
 

@@ -57,21 +57,21 @@
 
             createCountry(country, capital);    
         }
-
+        
         function createCountry(country, capital) {
             $('<tr>')
                 .append($(`<td>${country}</td>`))
                 .append($(`<td>${capital}</td>`))
-                .append($('<td>')
-                    .append($('<a href="#">Up </a>').click(moveUp))
-                    .append($('<a href="#">Down </a>').click(moveDown))
-                    .append($('<a href="#">Delete </a>').click(del))
-                       )
-            .appendTo($('#countriesTable'))
+                .append($(`<td>`)
+                        .append($('<a href="#">[Up] </a>').click(moveUp))
+                        .append($('<a href="#">[Down] </a>').click(moveDown))
+                        .append($('<a href="#">[Delete] </a>').click(del)) )
+            .appendTo($('#countriesTable'));
         }
-                createCountry('Bulgaria', 'Sofia');
-                createCountry('Germany', 'Berlin');
-                createCountry('Russia', 'Moscow');
+
+            createCountry('Bulgaria', 'Sofia');
+            createCountry('Germany', 'Berlin');
+            createCountry('Russia', 'Moscow');
 
                 fixLinks();
 
@@ -79,30 +79,30 @@
             let current = $(this).parent().parent();
             current.insertBefore(current.prev());
 
-            fixLinks();
-        }
+                fixLinks();
+        }  
 
         function moveDown() {
             let current = $(this).parent().parent();
             current.insertAfter(current.next());
-            
-            fixLinks();
+
+                fixLinks();
         }
 
         function del() {
             let current = $(this).parent().parent();
             current.fadeToggle(function () {
                 current.remove();
+                
+                    fixLinks();
             });
-
-            fixLinks();
         }
 
         function fixLinks() {
             $('tr a').show();
             $('tr:nth-child(3) a:contains(Up)').hide();
             $('tr:last-child a:contains(Down)').hide();
-        }
+        }  
         
     </script>
 </body>

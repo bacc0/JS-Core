@@ -55,9 +55,9 @@
             $('#showTownsButton').on('click', function() {
 
                  let arr = $('.clicked')
-                 .toArray()
-                 .map(c => c.textContent)
-                 .join(', ');
+                              .toArray()
+                              .map(c => c.textContent)
+                              .join(', ');
                 
                 $('#selectedTowns').append(`Selected towns: ${arr} `);
             });

@@ -7,7 +7,7 @@
             crossorigin="anonymous"></script>
         <style>
             #timer {
-                font-size: 7em;
+                font-size: 5em;
             }
         </style>
     </head>
@@ -22,18 +22,18 @@
         </div>
         <script>
             window.onload = function () {
+
                 timer();
 
                 function timer() {
 
-                    $('#start-timer').click(startTimer);
+                    $('#start-timer').click(startTimer).addClass( "yourClass" );
+                                    
                     $('#stop-timer').click(stop);
 
                     let setInt;
 
                     function stop() {
-                        console.log('0');
-
                         clearInterval(setInt);
                     }
 

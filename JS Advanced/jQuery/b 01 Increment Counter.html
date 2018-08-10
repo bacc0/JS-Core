@@ -1,95 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Timer</title>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+        <style>
+            #timer {
+                font-size: 7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="timer">
+            <span id="hours" class="timer">00</span>:
+            <span id="minutes" class="timer">00</span>:
+            <span id="seconds" class="timer">00</span>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Timer</title>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-        crossorigin="anonymous"></script>
-    <style>
-        #timer {
-            font-size: 7em;
-        }
-    </style>
-</head>
+            <button id="start-timer">Start</button>
+            <button id="stop-timer">Stop</button>
+        </div>
+        <script>
+            window.onload = function () {
+                timer();
 
-<body>
-    <div id="timer">
-        <span id="hours" class="timer">00</span>:
-        <span id="minutes" class="timer">00</span>:
-        <span id="seconds" class="timer">00</span>
-        
-        <button id="start-timer">Start</button>
-        <button id="stop-timer">Stop</button>
-    </div>
+                function timer() {
 
-    <script>
-        window.onload = function () {
-            timer();
+                    $('#start-timer').click(startTimer);
+                    $('#stop-timer').click(stop);
 
-            function timer() {
-                
-            
+                    let setInt;
 
-                
-                $('#start-timer').click(startTimer && timeInterval);
-                $('#stop-timer').click(timeIntervalChange);
-                    
-                    
-                let timeInterval = 1000;
+                    function stop() {
+                        console.log('0');
 
-                function timeIntervalChange() {
-                    timeInterval = 10;
-                }
+                        clearInterval(setInt);
+                    }
 
+                    function startTimer() {
 
-                function startTimer() {
-                    setInterval(function () {
+                        setInt = setInterval(function () {
 
-                        let secs = Number($('#seconds').text());
-                        let mins = Number($('#minutes').text());
-                        let hours = Number($('#hours').text());
+                            let secs = Number($('#seconds').text());
+                            let mins = Number($('#minutes').text());
+                            let hours = Number($('#hours').text());
 
-                        secs++;
+                            secs++;
 
-                        if (secs < 10) {
-                            $('#seconds').text('0' + secs);
-                        } else if (secs < 60) {
-                            $('#seconds').text(secs);
-                        } else {
-                            secs = 0;
-                            $('#seconds').text('0' + secs);
-
-                            mins++;
-
-                            if (mins < 10) {
-                                $('#minutes').text('0' + mins);
-                            } else if (mins < 60) {
-                                $('#minutes').text(mins);
+                            if (secs < 10) {
+                                $('#seconds').text('0' + secs);
+                            } else if (secs < 60) {
+                                $('#seconds').text(secs);
                             } else {
-                                mins = 0;
-                                $('#minutes').text('0' + mins);
+                                secs = 0;
+                                $('#seconds').text('0' + secs);
 
-                                hours++;
+                                mins++;
 
-                                if (hours < 10) {
-                                    $('#hours').text('0' + hours);
-                                } else if (hours < 60) {
-                                    $('#hours').text(hours);
+                                if (mins < 10) {
+                                    $('#minutes').text('0' + mins);
+                                } else if (mins < 60) {
+                                    $('#minutes').text(mins);
                                 } else {
-                                    hours = 0;
-                                    $('#hours').text('0' + hours);
-                                }
+                                    mins = 0;
+                                    $('#minutes').text('0' + mins);
 
+                                    hours++;
+
+                                    if (hours < 10) {
+                                        $('#hours').text('0' + hours);
+                                    } else if (hours < 60) {
+                                        $('#hours').text(hours);
+                                    } else {
+                                        hours = 0;
+                                        $('#hours').text('0' + hours);
+                                    }
+                                }
                             }
-                        }
-                    }, timeInterval);
+                        }, 1000);
+                    }
                 }
             }
-
-        }
-        
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>

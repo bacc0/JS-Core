@@ -8,17 +8,23 @@
                 display: inline-block;
                 cursor: pointer;
                 padding: 10px 20px;
-                background-color: rgb(218, 218, 218);
+                background-color: rgba(240, 240, 240, 0.555);
                 border-radius: 2px;
                 margin: 0 2px ;
+                box-shadow: 0 1px 7px rgba(117, 117, 117, 0.726);
             }
             .clicked{
-                background-color: rgb(126, 126, 126);
+                background: linear-gradient(rgb(102, 102, 102), rgb(87, 87, 87));
                 color: white;
+                box-shadow: 0 0 0px rgba(59, 59, 59, 0.726);
             }
             ul {
                 padding: 0;
             }
+            #selectedTowns{
+                display: none;
+            }
+           
         </style>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         
@@ -35,7 +41,7 @@
             <li>Tokyo</li>
         </ul>
         <button id="showTownsButton">Show Towns</button>
-        <div id="selectedTowns"></div>
+        <div id="selectedTowns">Selected towns: </div>
 
         <script>
             $(attachEvents());
@@ -58,10 +64,11 @@
 
                  let arr = $('.clicked')
                               .toArray()
-                              .map(c => c.textContent)
+                              .map(x => x.textContent)
                               .join(', ');
                 
-                $('#selectedTowns').append(`Selected towns: ${arr} `);
+                $('#selectedTowns').append(`${arr} `)
+                                   .css('display', 'inline');
             });
         </script>
     </body>

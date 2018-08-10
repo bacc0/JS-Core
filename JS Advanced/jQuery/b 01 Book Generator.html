@@ -3,17 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <title>Increment Counter</title>
+
+        <style>
+        #area button{
+            background-color: rgb(238, 255, 0);
+            color: blue;
+        }
+        </style>
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"
                 integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
                 crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="wrapper">
+            <textarea id="in-area"></textarea>
+            <button id="incr">Increment</button>
+            <button id="add">Add</button>
+
+            <div id="area"></div>
         </div>
 
         <script>
             window.onload = function(){
                 increment("#wrapper");
+            }
+
+            function increment() {
+                
+                $('#incr').click(numUp);
+                $('#add').click(numAdd);
+                
+
+                function numUp() {
+                    let num = Number($('#in-area').val());
+                    $('#in-area').val(++num);
+                }
+
+                function numAdd() {
+                    let num = Number($('#in-area').val());
+                    $('#area').append(`<div>• ( ${num} )</div>`);
+                }
+
+
             }
         </script>
     </body>

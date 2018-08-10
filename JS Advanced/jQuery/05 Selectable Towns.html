@@ -8,11 +8,14 @@
                 display: inline-block;
                 cursor: pointer;
                 padding: 10px 20px;
-                background-color: lightgrey;
+                background-color: rgb(218, 218, 218);
                 border-radius: 2px;
                 margin: 0 2px ;
             }
-
+            .clicked{
+                background-color: rgb(126, 126, 126);
+                color: white;
+            }
             ul {
                 padding: 0;
             }
@@ -34,23 +37,30 @@
 
         <script>
             $(attachEvents());
-
+            
             function attachEvents() {
                 $('#items li').click(changeStile);
 
                 function changeStile() {
 
-                    if($(this).css == ('background-color' ,'lightslategray')){
-                        $(this).css('background-color' ,'black')
-                           .css('color' ,'white') 
+                    if($(this).hasClass('clicked')) {
+                        $(this).removeClass('clicked');
                     }
                     else {
-                        $(this).css('background-color' ,'lightslategray')
-                           .css('color' ,'white') 
+                        $(this).addClass('clicked');
                     }
-                   
-                }
+                }   
             }
+
+            $('#showTownsButton').on('click', function() {
+
+                 let arr = $('.clicked')
+                 .toArray()
+                 .map(c => c.textContent)
+                 .join(', ');
+                
+                $('#selectedTowns').append(`Selected towns: ${arr} `);
+            });
         </script>
     </body>
 </html>

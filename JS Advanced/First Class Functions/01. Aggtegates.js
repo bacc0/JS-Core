@@ -9,3 +9,6 @@ function reduce(arr, func) {
 }
 
 console.log(reduce(['3', '4', '5', '6'] , (x, y)=> Number(x) + Number(y)));
+console.log(reduce(['3', '4', '5', '6'] , (x, y)=> Number(x) - Number(y)));
+console.log(reduce(['3', '4', '5', '6'] , (x, y)=> Number(x) * Number(y)));
+console.log(reduce(['3', '4', '5', '6'] , (x, y)=> '' + x + y));

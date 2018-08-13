@@ -34,4 +34,4 @@ function result() {
          console.log(`${argType} = ${argCount}`);
     }
 }
-result('cat', 42, function () { console.log('Hello world!'); });
+result('cat', 42, 555, function () { console.log('Hello world!'); });

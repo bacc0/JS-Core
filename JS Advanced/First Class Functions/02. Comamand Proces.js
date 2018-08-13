@@ -11,4 +11,6 @@ let commandProcessor = ( function() {
 })();
 
 console.log(commandProcessor.append('pesho'));
+console.log(commandProcessor.removeStart(2));
+console.log(commandProcessor.removeEnd(2));
 

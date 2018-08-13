@@ -11,5 +11,4 @@ function sortArray(array, orderType) {
 }
 
 console.log(sortArray([14, 7, 17, 6, 8], 'asc'));
-
 console.log(sortArray([14, 7, 17, 6, 8], 'desc'));

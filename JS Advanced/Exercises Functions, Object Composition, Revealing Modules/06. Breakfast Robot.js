@@ -1,6 +1,5 @@
 let solution = (function () {
     let robot = {
-
         protein: 0,
         carbohydrate: 0,
         fat: 0,
@@ -54,7 +53,6 @@ let solution = (function () {
             let selectedProduct = inputData[1]
             let selectedProductQuantity = Number(inputData[2])
             let currentProductStats = products[selectedProduct]
-
             let canProductBeCooked = true
 
             for (let microElement in currentProductStats) {

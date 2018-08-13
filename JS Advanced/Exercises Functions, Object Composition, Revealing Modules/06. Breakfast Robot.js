@@ -1,5 +1,5 @@
 let solution = (function () {
-    let products = robot = {
+    let robot = {
 
         protein: 0,
         carbohydrate: 0,
@@ -8,61 +8,70 @@ let solution = (function () {
     }
 
     let products = {
-        Apple: {
+        apple: {
             carbohydrate: 1,
             flavour: 2
         },
-        Coke: {
+        coke: {
             carbohydrate: 10,
             flavour: 20
         },
-        Burger: {
+        burger: {
             carbohydrate: 5,
             fat: 7,
             flavour: 3
         },
-        Omlet: {
+        omlet: {
             protein: 5,
             fat: 1,
             flavour: 1
         },
-        Cheverme: {
+        cheverme: {
             protein: 10,
             carbohydrate: 10,
             fat: 10,
             flavour: 10
-    },
-}
+        },
+    }
 
     return function (inputString) {
+
         let inputData = inputString.split(' ')
         let command = inputData[0]
 
         if (command === 'restock') {
+
             let microElement = inputData[1]
             let quantity = Number(inputData[2])
-
             robot[microElement] += quantity
+
         } else if (command === 'report') {
-                console.log(`protein=${robot.protein} carbohydrates=${robot.carbohydrate} fat=${robot.fat} flavour=${robot.flavour}`)
+
+            console.log(`protein=${robot.protein} carbohydrates=${robot.carbohydrate} fat=${robot.fat} flavour=${robot.flavour}`)
+
         } else if (command === 'prepare') {
-            let selectedProduct = inputData[1]  
-            let selectedProductQuantity = Number(inputData[2])  
+
+            let selectedProduct = inputData[1]
+            let selectedProductQuantity = Number(inputData[2])
             let currentProductStats = products[selectedProduct]
 
             let canProductBeCooked = true
 
             for (let microElement in currentProductStats) {
+
                 if (currentProductStats.hasOwnProperty(microElement)) {
+
                     let microElementQuantity = currentProductStats[microElement];
-                    if (robot[microElement] < microElementQuantity * selectedProductQuantity){
-                        anProductBeCooked = false
+
+                    if (robot[microElement] < microElementQuantity * selectedProductQuantity) {
+
+                        canProductBeCooked = false
                         console.log(`Error: not enoght ${microElement} in stock`)
                         break
                     }
                 }
             }
-            if (anProductBeCooked){
+            if (canProductBeCooked) {
 
                 for (let microElement in currentProductStats) {
                     if (currentProductStats.hasOwnProperty(microElement)) {

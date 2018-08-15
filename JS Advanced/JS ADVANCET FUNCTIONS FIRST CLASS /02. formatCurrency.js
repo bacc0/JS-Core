@@ -10,4 +10,4 @@ function formatCurrency( separator, symbol, symbolFirst, value ) {
 }
 console.log(formatCurrency(',', 'лв', false, 1.60))
 console.log(formatCurrency('.', '€', false, 1200))
-console.log(formatCurrency('.', '$', true, 1.66544))
+console.log(formatCurrency(',', '$', true, 1.66544))

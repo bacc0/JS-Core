@@ -3,7 +3,6 @@ let personProto = {
         console.log(2016 - this.yearOfBurth)
     }
 };
-
 let john = Object.create(personProto);
 
     john.name ='John';

@@ -1,7 +1,5 @@
-function interviewQuestions(job) {
-
-    return function(name) {
-
+function interviewQuestions( job ) {
+    return function( name ) {
         if (job === 'teacher'){
             console.log(`What subject do you teach, ${name}.`);
         } else if (job === 'designer') {

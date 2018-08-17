@@ -8,7 +8,7 @@ function interviewQuestions( job ) {
             console.log(`Hello ${name}, what do you do for leaving?`);
         }
     }
-}
+};
 
 interviewQuestions('teacher')('John');
 interviewQuestions('designer')('Jame');

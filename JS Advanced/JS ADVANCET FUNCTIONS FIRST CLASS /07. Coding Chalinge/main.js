@@ -4,10 +4,14 @@ function Qustion( qustion, answers, correct ) {
     this.correct = correct;
 };
 
-Qustion.prototype.displayQuestion() {
-    console.log(this.qustion)
+Qustion.prototype.displayQuestion = function() {
+    console.log(this.qustion);
+
+    for (let i = 0; i < this.answers.length; i++) {
+        console.log(`${i}: ${this.answers[i]}`);
+    }
 }
-   
+
 
 
 let q1 = new Qustion('Is Javascript the coolerst programming lenguage in the world?',
@@ -26,4 +30,6 @@ let questions = [q1, q2, q3];
 
 let n = Math.floor(Math.random() * questions.length);
 
-questions[n]
+questions[n].displayQuestion();
+
+let answer = prompt('Please select the corect answer!')

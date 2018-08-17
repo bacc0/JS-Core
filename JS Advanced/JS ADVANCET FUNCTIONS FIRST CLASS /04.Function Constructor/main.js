@@ -19,8 +19,8 @@ Person.prototype.anatomically = 'Homo sapiens (Homo Erectus)'  //add Property
 
 
 let john = new Person('John', 1990, 'theacher');
-let jane = new Person('Jane', 1969, 'designer');
-let mark = new Person('Mark', 1948, 'retired');
+let jane = new Person('Jane', 1969, 'designer', 'blond');
+let mark = new Person('Mark', 1948, 'retired', 'brown');
 
 john.calcukateAge();
 jane.calcukateAge();
@@ -30,11 +30,26 @@ console.log(john.anatomically);
 console.log(jane.anatomically);
 console.log(mark.anatomically);
 
+console.log('\n');
+
 console.log(`name: ${john.name}
 year of birth: ${john.yearOfBirth}
 job: ${john.job}
-hair color: ${john.hairColor}
-`);
+hair color: ${john.hairColor}`);
+
+console.log('\n');
+
+console.log(`name: ${jane.name}
+year of birth: ${jane.yearOfBirth}
+job: ${jane.job}
+hair color: ${jane.hairColor}`);
+
+console.log('\n');
+
+console.log(`name: ${mark.name}
+year of birth: ${mark.yearOfBirth}
+job: ${mark.job}
+hair color: ${mark.hairColor}`);
 
 
 

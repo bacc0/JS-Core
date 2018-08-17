@@ -1,18 +1,18 @@
 
 function retirement (retirementAge) {
 
-    let a =' years left until retirement.';
+    let x =' years left until retirement in ';
 
-    return function (yearOfBirth) {
+    return function (yearOfBirth, country) {
         let age = 2016 - yearOfBirth;
-        console.log((retirementAge - age) + a );
+        console.log((retirementAge - age) + x + country);
     }
 }
 
-//    retirementUs = retirement(66);  // USA
-//    retirementEu = retirement(65);  // EUROPE
+//    retirementUs = retirement(66);       // USA
+//    retirementGer = retirement(65);      // GERMANY
 //    retirementIseland = retirement(67);  // ISELAND
 
-retirement(66)(1990)  //  USA      ->  40
-retirement(65)(1990)  //  EUROPE   ->  39
-retirement(67)(1990)  //  ISELAND  ->  41
+retirement(66)(1990, 'USA')      //  USA      ->  40
+retirement(65)(1990, 'GERMANY')  //  GERMANY  ->  39
+retirement(67)(1990, 'ISELAND')  //  ISELAND  ->  41

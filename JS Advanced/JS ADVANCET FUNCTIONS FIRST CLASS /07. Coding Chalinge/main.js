@@ -14,7 +14,7 @@ Qustion.prototype.displayQuestion = function() {
 
 Qustion.prototype.checkAnswer = function(ans){
     if(ans === this.correct){
-        console.log('Correct Answer');
+        alert('Correct Answer');
     } else {
         console.log('Wrong Answer');
     }

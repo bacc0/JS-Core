@@ -1,19 +1,19 @@
-let personProto = {
-    calculateAge: function() {
-        console.log(2016 - this.yearOfBurth)
+
+function retirement (retirementAge) {
+
+    let a =' years left until retirement.';
+
+    return function (yearOfBirth) {
+        let age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a );
     }
-};
- 
-let john = Object.create(personProto);
+}
 
-    john.name ='John';
-    john.yearOfBurth =1990;
-    john.job ='teacher';
+//    retirementUs = retirement(66);  // USA
+//    retirementEu = retirement(65);  // EUROPE
+//    retirementIseland = retirement(67);  // ISELAND
 
-var jane = Object.create(personProto,
-    {
-        name: { value: 'Jane'},
-        yearOfBurth: { value: 1969},
-        job: { value: 'designer'}
-    });
-    
+
+retirement(66)(1990)  // USA        ->  40
+retirement(65)(1990)  // EUROPE     ->  39
+retirement(67)(1990)  // ISELAND    ->  41

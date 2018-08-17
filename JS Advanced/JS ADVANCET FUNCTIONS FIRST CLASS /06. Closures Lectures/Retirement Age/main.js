@@ -2,10 +2,11 @@
 function retirement (retirementAge) {
 
     let x =' years left until retirement in ';
+    let y =',\n the person age is ';
 
     return function (yearOfBirth, country) {
         let age = 2016 - yearOfBirth;
-        console.log((retirementAge - age) + x + country);
+        console.log((retirementAge - age) + x + country + y + age + '.\n');
     }
 }
 

@@ -7,7 +7,7 @@
 let Person = function(name, yearOfBirth, job, hairColor){
     this.name = name;
     this.yearOfBirth = yearOfBirth;
-    this.job = job;
+    this.job = job || 'unemployed';
     this.hairColor = hairColor || 'red (ginger)';
 }
 
@@ -20,7 +20,7 @@ Person.prototype.anatomically = 'Homo sapiens (Homo Erectus)'  //add Property
 
 let john = new Person('John', 1990, 'theacher');
 let jane = new Person('Jane', 1969, 'designer', 'blond');
-let mark = new Person('Mark', 1948, 'retired', 'brown');
+let mark = new Person('Mark', 1948, undefined, 'brown');
 
 john.calcukateAge();
 jane.calcukateAge();

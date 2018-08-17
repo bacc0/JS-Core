@@ -4,11 +4,11 @@
 //     job: 'teacher'
 // };
 
-let Person = function(name, yearOfBirth, job, color){
+let Person = function(name, yearOfBirth, job, hairColor){
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
-    this.color = color || 'red';
+    this.hairColor = hairColor || 'red (ginger)';
 }
 
 
@@ -29,5 +29,12 @@ mark.calcukateAge();
 console.log(john.anatomically);
 console.log(jane.anatomically);
 console.log(mark.anatomically);
+
+console.log(`name: ${john.name}
+year of birth: ${john.yearOfBirth}
+job: ${john.job}
+hair color: ${john.hairColor}
+`);
+
 
 

@@ -12,6 +12,13 @@ Qustion.prototype.displayQuestion = function() {
     }
 }
 
+Qustion.prototype.checkAnswer = function(ans){
+    if(ans === this.correct){
+        console.log('Correct Answer');
+    } else {
+        console.log('Wrong Answer');
+    }
+}
 
 
 let q1 = new Qustion('Is Javascript the coolerst programming lenguage in the world?',
@@ -32,4 +39,6 @@ let n = Math.floor(Math.random() * questions.length);
 
 questions[n].displayQuestion();
 
-let answer = prompt('Please select the corect answer!')
+let answer = parseInt(prompt('Please select the corect answer!'));
+
+questions[n].checkAnswer(answer);

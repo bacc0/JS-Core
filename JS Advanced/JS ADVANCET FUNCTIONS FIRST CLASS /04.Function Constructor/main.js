@@ -4,10 +4,11 @@
 //     job: 'teacher'
 // };
 
-let Person = function(name, yearOfBirth, job){
+let Person = function(name, yearOfBirth, job, color){
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
+    this.color = color || 'red';
 }
 
 

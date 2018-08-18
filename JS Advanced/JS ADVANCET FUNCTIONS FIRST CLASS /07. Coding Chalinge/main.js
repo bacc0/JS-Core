@@ -71,9 +71,10 @@ ______________SOLUTION TWO____________________
         }
     }
     
-    Qustion.prototype.checkAnswer = function(ans){
+    Qustion.prototype.checkAnswer = function(ans, callBack){
         if(ans === this.correct){
             alert('Correct Answer');
+            callBack(true);
         } else {
             console.log('Wrong Answer');
         }
@@ -92,6 +93,19 @@ ______________SOLUTION TWO____________________
     2);
     
     let questions = [q1, q2, q3];
+
+    function score() {
+        let sc = 0;
+        return function ( corect ) {
+            if (corect) {
+                sc++;
+            }
+            return score;
+        }
+    }
+
+    let keepScore = score();
+
     
     function nextQuestion() {
     
@@ -99,11 +113,16 @@ ______________SOLUTION TWO____________________
         
         questions[rand].displayQuestion();
         
-        let answer = parseInt(prompt('Please select the corect answer!'));
+        let answer =prompt('Please select the corect answer!');
         
-        questions[rand].checkAnswer(answer);
 
-        nextQuestion();
+        if (answer !== 'exit') {
+
+            questions[rand].checkAnswer(parseInt(answer),
+                                        keepScore);
+            
+            nextQuestion(); 
+        }
     }
 
     nextQuestion();

@@ -22,7 +22,7 @@
     }
     
     let q1 = new Qustion('Is Javascript the coolerst programming lenguage in the world?',
-    ['Yes', 'No'],
+    ['Yes', 'No', "I don't know!"],
     0);
     
     let q2 = new Qustion("What is the name of this course's teacher?" ,

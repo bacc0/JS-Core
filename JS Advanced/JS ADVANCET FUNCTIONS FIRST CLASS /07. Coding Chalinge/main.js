@@ -1,4 +1,4 @@
-(function () {
+(function() {
     function Qustion( qustion, answers, correct ) {
         this.qustion = qustion;
         this.answers = answers;

@@ -126,7 +126,7 @@ ______________SOLUTION TWO____________________
         
         questions[rand].displayQuestion();
         
-        let answer =prompt('Please select the corect answer!');
+        let answer = prompt('Please select the corect answer!');
         
         if (answer !== 'exit') {
 

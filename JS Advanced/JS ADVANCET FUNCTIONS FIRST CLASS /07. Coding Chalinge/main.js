@@ -3,49 +3,49 @@ ______________SOLUTION ONE____________________
 
 
 (function () {
-    function Question (question, answers, correct) {
-    this.question = question;
-    this.answers  = answers;
-    this.correct  = correct;
-}
-
-Question.prototype.displayQuestion =
-    function () {
-        console.log(this.question);
-        
-        for (let i = 0; i < this.answers.length; i++) {
-            console.log(`${i}: ${this.answers[i]}`);
-        }
+        function Question (question, answers, correct) {
+        this.question = question;
+        this.answers  = answers;
+        this.correct  = correct;
     }
 
-Question.prototype.checkTheAnswer =
-    function (answer) {   
-        if( answer === this.correct) {
-            console.log('👌🏽 Correct Answer 🦁');
+    Question.prototype.displayQuestion =
+        function () {
+            console.log(this.question);
 
-        } else {
-            console.log(' ☠️ Wrong Answer 💀');
+            for (let i = 0; i < this.answers.length; i++) {
+                console.log(`${i}: ${this.answers[i]}`);
+            }
         }
-    }
 
-let q1 = new Question('Is Javascript the coolerst programming lenguage in the world?',
-        ['Yes', 'No', "I don't know!"],
-        0); 
-let q2 = new Question('What is the name of the teacher', 
-        ['John', 'Jane', 'Johnas'], 
-        2);
-let q3 = new Question('What does best describe coding?', 
-        ['boring', 'hard', 'fun', 'tediuos'], 
-        2);
-let arrQuestions = [q1, q2, q3];
+    Question.prototype.checkTheAnswer =
+        function (answer) {   
+            if( answer === this.correct) {
+                console.log('👌🏽 Correct Answer 🦁');
 
-let randomNum = Math.floor( Math.random() * arrQuestions.length);
+            } else {
+                console.log(' ☠️ Wrong Answer 💀');
+            }
+        }
 
-arrQuestions[randomNum].displayQuestion();
+    let q1 = new Question('Is Javascript the coolerst programming lenguage in the world?',
+            ['Yes', 'No', "I don't know!"],
+            0); 
+    let q2 = new Question('What is the name of the teacher', 
+            ['John', 'Jane', 'Johnas'], 
+            2);
+    let q3 = new Question('What does best describe coding?', 
+            ['boring', 'hard', 'fun', 'tediuos'], 
+            2);
+    let arrQuestions = [q1, q2, q3];
 
-let answer = Number(prompt('Please answer the question! 😄'));
+    let randomNum = Math.floor( Math.random() * arrQuestions.length);
 
-arrQuestions[randomNum].checkTheAnswer(answer);
+    arrQuestions[randomNum].displayQuestion();
+
+    let answer = Number(prompt('Please answer the question! 😄'));
+
+    arrQuestions[randomNum].checkTheAnswer(answer);
 })();
 
 ______________SOLUTION TWO____________________

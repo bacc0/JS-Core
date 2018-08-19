@@ -28,9 +28,17 @@ ______________SOLUTION ONE____________________
             }
         }
     
-    let q1 = new Question('Is Javascript the coolerst programming lenguage in the world?',['Yes', 'No', "I don't know!"],0); 
-    let q2 = new Question('What is the name of the teacher', ['John', 'Jane', 'Johnas'], 2);
-    let q3 = new Question('What does best describe coding?', ['boring', 'hard', 'fun', 'tediuos'], 2);
+    let q1 = new Question('Is Javascript the coolerst programming lenguage in the world?',
+            ['Yes', 'No', "I don't know!"],
+            0); 
+            
+    let q2 = new Question('What is the name of the teacher', 
+            ['John', 'Jane', 'Johnas'], 
+            2);
+            
+    let q3 = new Question('What does best describe coding?', 
+            ['boring', 'hard', 'fun', 'tediuos'], 
+            2);
     
     let questions = [q1, q2, q3 ];
     

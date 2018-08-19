@@ -14,6 +14,7 @@ ______________SOLUTION ONE____________________
             console.log(`${i}: ${this.answers[i]}`);
         }
     }
+    
     Qustion.prototype.checkAnswer = function(ans){
         if(ans === this.correct){
             alert('Correct Answer');
@@ -45,6 +46,7 @@ ______________SOLUTION ONE____________________
     
     questions[rand].checkAnswer(answer);
 })();
+
 ______________SOLUTION TWO____________________
 */
 

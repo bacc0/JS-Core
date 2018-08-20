@@ -7,7 +7,18 @@ let budgetController = (function () {
 
 // UI CONTROLLER
 let UIController = (function () {
-     // some Code
+     
+     return {
+          getInput: function(){
+
+               return {
+                    type : document.querySelector('.add__type').value, // Will be ether inc or exp
+                    description : document.querySelector('.add__description').value,
+                    value : document.querySelector('.add__value').value
+
+               }
+          }
+     }
 })();
 
 
@@ -16,11 +27,13 @@ let controller = (function (budgetCtrl, UICtrl) {
 
      let ctrlAddItem = function (){
           // 1. Get  the field input data
+
+          let input = UICtrl.getInput();
+          console.log(input);
           // 2. Add the item to the budget controller
           // 3. Add the item to the UI
           // 4. Calculate the budget
           // 5. display the budget on the UI
-          console.log('ddd');
      }
 
      document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
@@ -29,10 +42,7 @@ let controller = (function (budgetCtrl, UICtrl) {
           if (event.keyCode === 13 || event.which === 13){
 
                ctrlAddItem();
-
-          } else {
-               console.log('Not Enter');
-          }
+          } 
      });
 
 })(budgetController, UIController);

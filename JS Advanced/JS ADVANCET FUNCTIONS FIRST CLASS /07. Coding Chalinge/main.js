@@ -92,11 +92,11 @@ ______________SOLUTION TWO____________________
                         ['Yes', 'No', "I don't know!"],
                         0);
     
-    let q2 = new Qustion("What is the name of this course's teacher?" ,
+    let q2 = new Qustion('What is the name of this course teacher? ',
                         ['John', 'Michael', 'Jonas'],
                         2);
     
-    let q3 = new Qustion("What dose best describe coding?" ,
+    let q3 = new Qustion('What dose best describe coding?' ,
                         ['Boring', 'hard', 'Fun', 'Tedious'],
                         2);
     

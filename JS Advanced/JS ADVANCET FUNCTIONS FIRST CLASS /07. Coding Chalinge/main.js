@@ -60,6 +60,7 @@ ______________SOLUTION TWO____________________
     };
     
     Qustion.prototype.displayQuestion = function() {
+
         console.log(this.qustion);
     
         for (let i = 0; i < this.answers.length; i++) {
@@ -67,21 +68,15 @@ ______________SOLUTION TWO____________________
         }
     }
     
-    Qustion.prototype.checkAnswer = 
-        function(ans, callback){
+    Qustion.prototype.checkAnswer = function(ans, callback) {
 
         let sc;
 
         if(ans === this.correct){
-
             alert('Correct Answer');
-
             sc = callback(true);
-
         } else {
-
-            console.log('Wrong Answer');
-            
+            console.log('Wrong Answer'); 
             sc = callback(false);
         }
 
@@ -129,7 +124,6 @@ ______________SOLUTION TWO____________________
         let answer = prompt('Please select the corect answer!');
         
         if (answer !== 'exit') {
-
             questions[rand].checkAnswer( parseInt(answer), keepScore);
             
             nextQuestion(); 

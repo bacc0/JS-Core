@@ -59,16 +59,16 @@ ______________SOLUTION TWO____________________
         }
     }
     
-    Qustion.prototype.checkAnswer = function(ans, callback) {
+    Qustion.prototype.checkAnswer = function(ans, keepScore) {
 
         let sc;
 
         if(ans === this.correct){
             alert('Correct Answer');
-            sc = callback(true);
+            sc = keepScore(true);
         } else {
             console.log('Wrong Answer'); 
-            sc = callback(false);
+            sc = keepScore(false);
         }
 
         this.displayScore(sc);
@@ -78,6 +78,15 @@ ______________SOLUTION TWO____________________
         console.log(`Your current score is ${score}-------------------------------------`);
     }
 
+    function score() {
+        let sc = 0;
+        return function ( correct ) {
+            if (correct) {
+                sc++;
+            }
+            return sc;
+        }
+    }
 
     let q1 = new Qustion('Is Javascript the coolerst programming lenguage in the world?',
     ['Yes', 'No', "I don't know!"],
@@ -93,15 +102,6 @@ ______________SOLUTION TWO____________________
     
     let questions = [q1, q2, q3];
 
-    function score() {
-        let sc = 0;
-        return function ( correct ) {
-            if (correct) {
-                sc++;
-            }
-            return sc;
-        }
-    }
 
     let keepScore = score();
 

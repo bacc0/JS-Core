@@ -27,15 +27,15 @@ ______________SOLUTION ONE____________________
             }
         };
 
-    let q1 = new Question('Is Javascript the best programming language in the world?',
-            ['Yes', 'No', "I don't know!"],
-            0); 
-    let q2 = new Question('What is the name of the teacher', 
-            ['John', 'Jane', 'Johnas'], 
-            2);
-    let q3 = new Question('What does best describe coding?', 
-            ['boring', 'hard', 'fun', 'tedious'], 
-            2);
+   let q1 = new Question('Is Javascript the best programming language in the world?',
+                        ['Yes', 'No', "I don't know!"],
+                         0); 
+   let q2 = new Question('What is the name of the teacher', 
+                        ['John', 'Jane', 'Johnas'], 
+                         2);
+   let q3 = new Question('What does best describe coding?', 
+                        ['boring', 'hard', 'fun', 'tedious'], 
+                         2);
     let arrQuestions = [q1, q2, q3];
 
     let randomNum = Math.floor(
@@ -95,16 +95,16 @@ ______________SOLUTION TWO____________________
     }
 
 
-      let q1 = new Question('Is Javascript the best programming language in the world?',
-            ['Yes', 'No', "I don't know!"],
-            0); 
-    let q2 = new Question('What is the name of the teacher', 
-            ['John', 'Jane', 'Johnas'], 
-            2);
-    let q3 = new Question('What does best describe coding?', 
-            ['boring', 'hard', 'fun', 'tedious'], 
-            2);
-    let arrQuestions = [q1, q2, q3];
+     let q1 = new Question('Is Javascript the best programming language in the world?',
+                          ['Yes', 'No', "I don't know!"],
+                           0); 
+     let q2 = new Question('What is the name of the teacher', 
+                          ['John', 'Jane', 'Johnas'], 
+                           2);
+     let q3 = new Question('What does best describe coding?', 
+                          ['boring', 'hard', 'fun', 'tedious'], 
+                           2);
+     let arrQuestions = [q1, q2, q3];
 
     function score() {
         let sc = 0;

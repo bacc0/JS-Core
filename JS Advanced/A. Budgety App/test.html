@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
       <title>Document</title>
 </head>
+
 <body>
-      <h1>Document</h1>
+      <h1 id="a">Document</h1>
+
+      <script>
+            (function () {
+                  function Question(question, answers, correct) {
+                        this.question = question;
+                        this.answers = answers;
+                        this.correct = correct;
+                  }
+
+                  Question.prototype.showQuestion =
+                        function () {
+                              console.log(this.question);
+
+                              for (let i = 0; i < this.answers.length; i++) {
+                                    console.log(`${i} 🔘 ${this.answers[i]}`);
+                              }
+                        }
+
+                  Question.prototype.checkAnswer =
+                        function (answer) {
+                              if (answer == this.correct) {
+                                    console.log('Correct Answer');
+                              } else {
+                                    console.log('Wrong Answer');
+                              }
+                        }
+                        
+                  let q1 = new Question('Is Javascript the best programming language in the world?', ['Yes', 'No',
+                              "I don't know!"
+                        ],
+                        0);
+                  let q2 = new Question('What is the name of the teacher', ['John', 'Jane', 'Johnas'],
+                        2);
+                  let q3 = new Question('What does best describe coding?', ['boring', 'hard', 'fun', 'tedious'],
+                        2);
+                  let arrQuestions = [q1, q2, q3];
+
+
+                  let ranNum = Math.floor(Math.random() * arrQuestions.length);
+
+                  arrQuestions[ranNum].showQuestion();
+
+                  let answer = prompt('Plese answer the question 🔲 !');
+
+                  arrQuestions[ranNum].checkAnswer(answer);
+            })();
+      </script>
+
 </body>
+
 </html>

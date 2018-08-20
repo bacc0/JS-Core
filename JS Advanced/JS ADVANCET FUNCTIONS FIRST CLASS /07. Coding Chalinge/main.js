@@ -22,7 +22,6 @@ ______________SOLUTION ONE____________________
         function (answer) {
             if (answer == this.correct) {
                 console.log('😀😀😀 Correct Answer 😀😀😀');
-
             }  else {
                 console.log('💀💀💀 Wrong Answer 💀💀💀');
             }
@@ -46,7 +45,7 @@ ______________SOLUTION ONE____________________
 
     let answer = prompt('Please answer the question ▷ !');
 
-       arrQuestions[randomNum].checkTheAnswer(answer); 
+        arrQuestions[randomNum].checkTheAnswer(answer); 
 })();
 
 ______________SOLUTION TWO____________________

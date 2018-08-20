@@ -90,15 +90,15 @@ ______________SOLUTION TWO____________________
 
     let q1 = new Qustion('Is Javascript the coolerst programming lenguage in the world?',
                         ['Yes', 'No', "I don't know!"],
-                        0);
+                         0);
     
     let q2 = new Qustion('What is the name of this course teacher? ',
                         ['John', 'Michael', 'Jonas'],
-                        2);
+                         2);
     
     let q3 = new Qustion('What dose best describe coding?' ,
                         ['Boring', 'hard', 'Fun', 'Tedious'],
-                        2);
+                         2);
     
     let questions = [q1, q2, q3];
 

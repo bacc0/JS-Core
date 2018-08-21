@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-      <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Cards</title>
-      </head>
-      <body>
-            <h1 id="a">Cards</h1>
 
-            <script>
-                  let Suits = {
-                        SPADES: '♠️',
-                        HEARTS: '♥️',
-                        DIAMONDS: '♦️',
-                        CLUBS: '♣️'
-                  };
-                 
-                 class Cards {
-                       constructor (face, suit) {
-                             this.face = face;
-                             this.suit = suit;
-                       }
-                       get face() {
-                             return this._face;
-                       }
-                       set face (value){
-                        this._face = value; 
-                       }
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Cards</title>
+</head>
 
+<body>
+      <h1 id="a">Cards</h1>
 
+      <script>
+            let Suits = {
+                  SPADES: '♠️',
+                  HEARTS: '♥️',
+                  DIAMONDS: '♦️',
+                  CLUBS: '♣️'
+            };
 
-                       get suit() {
-                             return this.suit;
-                       }
-                       set suit (value){
-                        this.suit = value; 
-                       }
+            class Cards {
+                  constructor(face, suit) {
+                        this.face = face;
+                        this.suit = suit;
+                  }
+                  get face() {
+                        return this._face;
+                  }
+                  set face(value) {
+                        const validFace = ['2','3','4','5','6','7','8','9','10','J','Q','K','A',]
+                        this._face = value;
+                  }
 
 
-                       toString() {
-                             return this.face + this.suit;
-                       }
-                 }
 
-                 let c1 = new Cards('Q', Suits.SPADES);
+                  get suit() {
+                        return this.suit;
+                  }
+                  set suit(value) {
+                        this.suit = value;
+                  }
 
-                 console.log('' + c1);
-                 
-            </script>
-      </body>
+
+                  toString() {
+                        return this.face + this.suit;
+                  }
+            }
+
+            let c1 = new Cards('Q', Suits.SPADES);
+
+            console.log('' + c1);
+      </script>
+</body>
+
 </html>

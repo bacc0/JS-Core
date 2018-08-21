@@ -18,7 +18,17 @@
                              this.height = height;
                              this.color  = color || 'red';
                        }
+
+                       calcArea() {
+                             console.log(this.width * this.height);
+                       }
+
+                       resize( ratio ) {
+                             console.log(this.width * this.height * ratio);
+                       }
                  }
+
+
 
                  let r = new Rectangle(20,30, 'blue');
                  let rr = new Rectangle(20,30);

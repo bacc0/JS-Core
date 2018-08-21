@@ -25,20 +25,23 @@
                         this.suit = suit;
                   }
                   get face() {
+                        if (!Card.validFaces.includes(value)) {
+                              throw new Error('Invalid Face')
+                        }
                         return this._face;
                   }
                   set face(value) {
-                        const validFace = ['2', '3', '4', '5', '6', '7', '8', '9', '10',    
-                                           'J', 'Q', 'K', 'A',]
                         this._face = value;
                   }
-
 
 
                   get suit() {
                         return this.suit;
                   }
                   set suit(value) {
+                        if (!Array.from(Suits).map(suit => suit[1]).includes(value)) {
+                              throw new Error('Invalid Suit')
+                        }
                         this.suit = value;
                   }
 
@@ -47,12 +50,16 @@
                         return this.face + this.suit;
                   }
 
-                  static get validFaces () {
-                        return ['2', '3', '4', '5', '6', 
-                                '7', '8', '9', '10',    
-                                'J', 'Q', 'K', 'A',]
+                  static get validFaces() {
+                        return Cards._validFaces;
+
                   }
             }
+
+            Cards._validFaces = ['2', '3', '4', '5', '6',
+                                '7', '8', '9', '10',
+                                'J', 'Q', 'K', 'A'
+            ];
 
             let c1 = new Cards('Q', Suits.SPADES);
 

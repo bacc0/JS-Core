@@ -22,6 +22,22 @@
                              this.face = face;
                              this.suit = suit;
                        }
+                       get face() {
+                             return this._face;
+                       }
+                       set face (value){
+                        this._face = value; 
+                       }
+
+
+
+                       get suit() {
+                             return this.suit;
+                       }
+                       set suit (value){
+                        this.suit = value; 
+                       }
+
 
                        toString() {
                              return this.face + this.suit;

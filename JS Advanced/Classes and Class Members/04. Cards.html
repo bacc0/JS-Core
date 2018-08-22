@@ -32,16 +32,18 @@
                                     if (validFaces.indexOf(givenFace)===-1) {
                                           throw new Error
                                     }
-                                    this._face=givenFace;
+                                    this._face = givenFace;
                               }
                               get face() {
                                     return this._face;
                               }
+
+                              
                               set suit(givenSuit) {
                                     if (validSuits.indexOf(givenSuit)===-1) {
                                           throw new Error
                                     }
-                                    this._suit=givenSuit;
+                                    this._suit = givenSuit;
                               }
                               get suit() {
                                     return this._suit;
@@ -54,13 +56,15 @@
                               CLUBS:   '♣'
                         }
                         return {
-                              Suits: Suits, Card: Card
+                              Suits: Suits, 
+                              Card: Card
                         }
                   } ());
 
-                  let Suits=defineCards.Suits;
-                  let Card=defineCards.Card;
-                  let card=new Card("2", Suits.SPADES);
+                  let Suits = defineCards.Suits;
+                  let Card = defineCards.Card;
+
+                  let card = new Card("2", Suits.SPADES);
 
                   /*
 

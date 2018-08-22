@@ -46,7 +46,18 @@
                               return this._suit;
                         }
                   }
+                  
+                  let Suits = {
+                              SPADES:  '♠', 
+                              HEARTS:  '♥', 
+                              DIAMONDS:'♦', 
+                              CLUBS:   '♣'
+                        }
 
+                  return {
+                        Suits: Suits,
+                        Card: Card
+                  }      
 
             })();
             let Suits = defineCards.Suits;

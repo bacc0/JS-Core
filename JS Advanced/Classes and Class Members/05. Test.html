@@ -24,37 +24,16 @@
                               class Card {
                                     constructor(face, suit) {
 
-                                          if (validFaces.indexOf(face) === -1 {
+                                          if (validFaces.indexOf(face) === -1) {
                                                       throw new Error
                                                 }
-                                                if (validSuits.indexOf(suit) === -1 {
+                                                if (validSuits.indexOf(suit) === -1) {
                                                             throw new Error
                                                       }
                                                       this.face = face; this.suit = suit;
                                                 }
 
-                                                set face(givenFace) {
-                                                      if (validFaces.indexOf(givenFace) === -1) {
-                                                            throw new Error
-                                                      }
-
-                                                      this._face = givenFace;
-                                                }
-                                                get face() {
-                                                      return this._face;
-                                                }
-
-                                                set suit(givenSuit) {
-                                                      if (validSuits.indexOf(givenSuit) === -1) {
-                                                            throw new Error
-                                                      }
-                                                      this._suit = givenSuit;
-                                                }
-
-
-                                                get suit() {
-                                                      return this._suit;
-                                                }
+                          
                                           }
 
                                           let Suits = {
@@ -76,7 +55,7 @@
                                     
                                     let card  = new Card("2", Suits.SPADES);
 
-                              /*
+                              
 
                               let c1 = new Card ('2', Suits.SPADES);
                               let c2 = new Card ('Q', Suits.HEARTS);
@@ -85,8 +64,7 @@
 
                               console.log(`${c1.face} ${c1.suit} \n${c2.face} ${c2.suit} \n${c3.face} ${c3.suit} \n${c4.face} ${c4.suit}`);
 
-                              🔴 ⚪️ 🔵 Object !!!
-                              */
+                              
       </script>
 </body>
 

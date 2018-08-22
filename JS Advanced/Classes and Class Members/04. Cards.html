@@ -10,26 +10,29 @@
             <h1 id="a">Cards</h1>
 
             <script>
-                 let defineCards=(function () {
-                        let validFaces=["2", "3", "4", "5", 
-                                        "6", "7", "8", "9", "10", 
-                                        "J", "Q", "K", "A"];
+                 let defineCards = (function () {
 
-                        let validSuits=['♠', '♥', '♦', '♣'];
+                        let validFaces = ["2", "3", "4", "5", 
+                                          "6", "7", "8", "9", "10", 
+                                          "J", "Q", "K", "A"];
+
+                        let validSuits = ['♠', '♥', '♦', '♣'];
 
                         class Card {
                               constructor(face, suit) {
-                                    if (validFaces.indexOf(face)===-1) {
+
+                                    if (validFaces.indexOf(face) === -1) {
                                           throw new Error
                                     }
-                                    if (validSuits.indexOf(suit)===-1) {
+                                    if (validSuits.indexOf(suit) ===-1 ) {
                                           throw new Error
                                     }
-                                    this.face=face;
-                                    this.suit=suit;
+                                    this.face = face;
+                                    this.suit = suit;
                               }
+
                               set face(givenFace) {
-                                    if (validFaces.indexOf(givenFace)===-1) {
+                                    if (validFaces.indexOf(givenFace)=== -1 ) {
                                           throw new Error
                                     }
                                     this._face = givenFace;
@@ -38,9 +41,9 @@
                                     return this._face;
                               }
 
-                              
+
                               set suit(givenSuit) {
-                                    if (validSuits.indexOf(givenSuit)===-1) {
+                                    if (validSuits.indexOf(givenSuit) === -1) {
                                           throw new Error
                                     }
                                     this._suit = givenSuit;
@@ -49,7 +52,7 @@
                                     return this._suit;
                               }
                         }
-                        let Suits= {
+                        let Suits = {
                               SPADES:  '♠', 
                               HEARTS:  '♥', 
                               DIAMONDS:'♦', 

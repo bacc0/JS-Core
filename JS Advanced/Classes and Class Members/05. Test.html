@@ -29,11 +29,17 @@
                               this.suit = suit;
                         }
 
-                        get face(givenFace) {
+                        set face(givenFace) {
                               if (validFaces.indexOf(givenFace) === -1){
-                                    throw new Error('HHHH')
+                                    throw new Error
                               }
+
+                              this._face = givenFace;
                         }
+                        get face() {
+                              return this._face;
+                        }
+                        
                   }
 
 

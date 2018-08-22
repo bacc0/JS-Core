@@ -12,60 +12,64 @@
       <h1 id="a">Cards Test</h1>
 
       <script>
-            let defineCards = (function () {
+            let defineCards=(function () {
+                   let validFaces=["2", "3", "4", "5", 
+                                   "6", "7", "8", "9", "10", 
+                                   "J", "Q", "K", "A"];
 
-                              let validFaces = ["2", "3", "4", "5",
-                                            "6", "7", "8", "9", "10",
-                                            "J", "Q", "K", "A"
-                              ];
+                   let validSuits=['♠', '♥', '♦', '♣'];
 
-                              let validSuits = ['♠', '♥', '♦', '♣'];
+                   class Card {
+                         constructor(face, suit) {
+                        
+                               this.face=face;
+                               this.suit=suit;
+                         }
+                         set face(givenFace) {
+                               if (validFaces.indexOf(givenFace)===-1) {
+                                     throw new Error
+                               }
+                               this._face=givenFace;
+                         }
+                         get face() {
+                               return this._face;
+                         }
+                         set suit(givenSuit) {
+                               if (validSuits.indexOf(givenSuit)===-1) {
+                                     throw new Error
+                               }
+                               this._suit=givenSuit;
+                         }
+                         get suit() {
+                               return this._suit;
+                         }
+                   }
+                   let Suits= {
+                         SPADES:  '♠', 
+                         HEARTS:  '♥', 
+                         DIAMONDS:'♦', 
+                         CLUBS:   '♣'
+                   }
+                   return {
+                         Suits: Suits, Card: Card
+                   }
+             } ());
 
-                              class Card {
-                                    constructor(face, suit) {
+             let Suits=defineCards.Suits;
+             let Card=defineCards.Card;
+             let card=new Card("2", Suits.SPADES);
 
-                                          if (validFaces.indexOf(face) === -1) {
-                                                      throw new Error
-                                                }
-                                                if (validSuits.indexOf(suit) === -1) {
-                                                            throw new Error
-                                                      }
-                                                      this.face = face; this.suit = suit;
-                                                }
+            
 
-                          
-                                          }
+             let c1 = new Card ('2', Suits.SPADES);
+             let c2 = new Card ('Q', Suits.HEARTS);
+             let c3 = new Card ('K', Suits.DIAMONDS);
+             let c4 = new Card ('A', Suits.CLUBS);
 
-                                          let Suits = {
-                                                SPADES: '♠',
-                                                HEARTS: '♥',
-                                                DIAMONDS: '♦',
-                                                CLUBS: '♣'
+             console.log(`${c1.face} ${c1.suit} \n${c2.face} ${c2.suit} \n${c3.face} ${c3.suit} \n${c4.face} ${c4.suit}`);
 
-                                          }
-
-                                          return {
-                                                Suits: Suits,
-                                                Card: Card 
-                                          }
-                                    })();
-                                    
-                                    let Suits = defineCards.Suits;
-                                    let Card  = defineCards.Card;
-                                    
-                                    let card  = new Card("2", Suits.SPADES);
-
-                              
-
-                              let c1 = new Card ('2', Suits.SPADES);
-                              let c2 = new Card ('Q', Suits.HEARTS);
-                              let c3 = new Card ('K', Suits.DIAMONDS);
-                              let c4 = new Card ('A', Suits.CLUBS);
-
-                              console.log(`${c1.face} ${c1.suit} \n${c2.face} ${c2.suit} \n${c3.face} ${c3.suit} \n${c4.face} ${c4.suit}`);
-
-                              
-      </script>
+             
+      </script
 </body>
 
 </html>

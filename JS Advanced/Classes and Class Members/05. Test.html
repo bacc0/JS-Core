@@ -18,51 +18,47 @@
                                     "6", "7", "8", "9", "10", 
                                     "J", "Q", "K", "A"];
 
-                  let validSuits = ['♠', '♥', '♦', '♣'];
+                  let validSuits = ['♠', '♥', '♦', '♣'];  
 
                   class Card {
                         constructor(face, suit) {
-
-                             
                               this.face = face;
-                              this.suit = suit;  
+                              this.suit = suit;
                         }
-                        
-                        set face(givenFace) {
-                              if (validFaces.indexOf(givenFace) === -1) {
+
+                        set face(givenFace){
+                              if(validFaces.indexOf(givenFace) === - 1) {
                                     throw new Error
-                                    }
-                                    this._face = givenFace;
                               }
-                        get face() {
+                              this._face = givenFace;
+                        }
+                        get face(){
                               return this._face;
                         }
 
-
                         set suit(givenSuit) {
-                                    if (validSuits.indexOf(givenSuit) === -1) {
-                                          throw new Error
-                                    }
-                                    this._suit = givenSuit;
+                              if(validSuits.indexOf(givenSuit) === - 1) {
+                                    throw new Error
                               }
-                        get suit() {
+                              this._suit = givenSuit;
+                        }
+                        get suit(){
                               return this._suit;
                         }
-                        }
+                  }
 
-                        let Suits = {
-                              SPADES:  '♠', 
-                              HEARTS:  '♥', 
-                              DIAMONDS:'♦', 
-                              CLUBS:   '♣'
-                        }
+                  let Suits = {
+                        SPADES:  '♠', 
+                        HEARTS:  '♥', 
+                        DIAMONDS:'♦', 
+                        CLUBS:   '♣'
+                  }
 
-                        return {
-                              Suits: Suits, 
-                              Card: Card
-                        }
-                  
-                  } ());
+                  return {
+                        Suits: Suits, 
+                        Card: Card,
+                  }
+            })();
 
             let Suits = defineCards.Suits;
             let Card = defineCards.Card;

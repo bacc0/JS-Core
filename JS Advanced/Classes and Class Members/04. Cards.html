@@ -12,8 +12,12 @@
             <script>
 
                   let defineCards = (function () {
-                        validFaces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"] 
-                        validSuits = ['♠', '♥', '♦', '♣'] 
+
+                        validFaces = ["2", "3", "4", "5", 
+                                      "6", "7", "8", "9", "10", 
+                                      "J", "Q", "K", "A"]; 
+
+                        validSuits = ['♠', '♥', '♦', '♣'] ;
                         
                         class Card {
                               constructor(face, suit) {
@@ -45,11 +49,12 @@
                                     return this._suit;
                               }
                         }
+                        
                         let Suits = {
-                              SPADES: '♠',
-                              HEARTS: '♥',
-                              DIAMONDS: '♦',
-                              CLUBS: '♣'
+                              SPADES:  '♠',
+                              HEARTS:  '♥',
+                              DIAMONDS:'♦',
+                              CLUBS:   '♣'
                         }
                         return {
                               Suits: Suits,

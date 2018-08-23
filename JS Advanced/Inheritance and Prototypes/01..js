@@ -11,3 +11,6 @@ class Teacher extends Person {
         this.subject = subject
     } 
 }
+
+let t = new Teacher('Pesho', 'p@mail.com', 'JS')
+console.log(t);

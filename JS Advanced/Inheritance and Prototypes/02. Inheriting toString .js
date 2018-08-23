@@ -9,7 +9,6 @@ function solve() {
             return `${className} (name: ${this.name}, email: ${this.email})`
         }
     }
-
     class Teacher extends Person {
         constructor(name, email, subject) {
             super(name, email)
@@ -30,8 +29,7 @@ function solve() {
             return parentToString + `, course: ${this.course})`
         }
     }
-
-
+    
     return {
             Person,
             Teacher,

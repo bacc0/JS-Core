@@ -1,16 +1,20 @@
-class Person {
-    constructor(name, email){
-        this.name = name;
-        this.email = email;
+function solve(){
+    class Person {
+        constructor(name, email){
+            this.name = name;
+            this.email = email;
+        }
     }
-}
 
-class Teacher extends Person {
-    constructor(name, email , subject){
-        super(name, email)
-        this.subject = subject
-    } 
-}
+    class Teacher extends Person {
+        constructor(name, email , subject){
+            super(name, email)
+            this.subject = subject
+        } 
+    }
 
-let t = new Teacher('Pesho', 'p@mail.com', 'JS')
-console.log(t);
+    let t = new Teacher('Pesho', 'p@mail.com', 'JS')
+    console.log(t);
+
+    return { Person, Teacher}
+}

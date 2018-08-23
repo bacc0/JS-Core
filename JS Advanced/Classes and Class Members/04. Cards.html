@@ -29,6 +29,8 @@
                                     }
                                     this.face = face;
                                     this.suit = suit;
+                                    
+                                    Object.freeze(this);
                               }
 
                               set face(givenFace) {

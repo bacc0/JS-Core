@@ -12,9 +12,9 @@
             <script>
                  let defineCards = (function () {
 
-                        const validFaces = ["2", "3", "4", "5", 
-                                           "6", "7", "8", "9", "10", 
-                                           "J", "Q", "K", "A"];
+                        const validFaces = [  "2", "3", "4", "5", 
+                                              "6", "7", "8", "9", "10", 
+                                              "J", "Q", "K", "A"  ];
 
                         const validSuits = ['♠', '♥', '♦', '♣'];
 
@@ -34,7 +34,7 @@
                               }
 
                               set face(givenFace) {
-                                    if (validFaces.indexOf(givenFace) === - 1 ) {
+                                    if (validFaces.indexOf(givenFace) === -1 ) {
                                           throw new Error
                                     }
                                     this._face = givenFace;
@@ -45,7 +45,7 @@
 
 
                               set suit(givenSuit) {
-                                    if (validSuits.indexOf(givenSuit) === - 1) {
+                                    if (validSuits.indexOf(givenSuit) === -1) {
                                           throw new Error
                                     }
                                     this._suit = givenSuit;
@@ -55,9 +55,9 @@
                               }
                         }
                         const Suits = {
-                              SPADES:  '♠', 
-                              HEARTS:  '♥', 
-                              DIAMONDS:'♦', 
+                              SPADES:  '♠',
+                              HEARTS:  '♥',
+                              DIAMONDS:'♦',
                               CLUBS:   '♣'
                         }
                         return {

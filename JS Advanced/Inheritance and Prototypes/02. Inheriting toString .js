@@ -29,7 +29,7 @@ function solve() {
             return parentToString + `, course: ${this.course})`
         }
     }
-    
+
     return {
             Person,
             Teacher,
@@ -43,6 +43,8 @@ let Teacher = result.Teacher
 let Student = result.Student
 
 let t = new Teacher('Pesho', 'test@mail.com', 'JS')
+
+
 console.log(t.toString())
 
 let s = new Student('Ivan', 'test2@mail.com', 'JS Core')

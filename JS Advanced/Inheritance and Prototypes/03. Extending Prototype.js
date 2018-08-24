@@ -44,8 +44,16 @@ let Person = result.Person
 let Teacher = result.Teacher
 let Student = result.Student
 
-let t = new Teacher('Pesho', 'test@mail.com', 'JS')
-console.log(t.toString())
+function extendPrototype (cla) {
+    cla.prototype.species = 'Human'
+    cla.prototype.toSpeciesString = function () {
+        return `I am a ${this.species}. ` + this.toString()
+    }
+}
 
-let s = new Student('Ivan', 'test2@mail.com', 'JS Core')
-console.log(s.toString())
+let t = new Teacher('Pesho', 'test@mail.com', 'JS')
+
+extendPrototype(Teacher)
+
+console.log(t.toSpeciesString());
+

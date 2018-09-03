@@ -3,7 +3,6 @@ function addRemove( arr ) {
 
     let comments = {
         add: (num) => result.push(num);
-        
         remove: (num) => result.pop();
     }
 }
